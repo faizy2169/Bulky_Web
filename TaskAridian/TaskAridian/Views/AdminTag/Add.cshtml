@@ -1,0 +1,25 @@
+﻿@model TaskAridian.Models.Admin
+<div>
+    <h1>Add Tag Component</h1>
+</div>
+<div class="container">
+    <form class="form" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" asp-for="FirstName">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" asp-for="LastName">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" asp-for="Email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" asp-for="Password">
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+</div>

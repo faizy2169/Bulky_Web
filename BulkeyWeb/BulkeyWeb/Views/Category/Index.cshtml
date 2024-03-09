@@ -22,9 +22,13 @@
             @{
                 foreach (var items in Model)
                 {
-                    <tr>
+                    <tr class="align-middle">
                         <td>@items.Name</td>
                         <td>@items.DisplayOrder</td>
+                        <td class="d-flex column-gap-3">
+                            <a class="btn btn-primary form-control" asp-controller="Category" asp-action="Edit" asp-route-id="@items.Id">Edit</a>
+                            <a class="btn btn-danger form-control">Delete</a>
+                        </td>
                     </tr>
                 }
             }

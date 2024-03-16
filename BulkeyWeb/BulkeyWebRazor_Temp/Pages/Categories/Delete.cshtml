@@ -1,0 +1,36 @@
+﻿@page
+@model BulkeyWebRazor_Temp.Pages.Categories.DeleteModel
+<div class="container">
+    <div class="row my-3">
+        <h3>Delete Category</h3>
+        <hr />
+    </div>
+    <div class="row">
+        <form method="post">
+
+            @* <div asp-validation-summary="ModelOnly"></div> *@
+            <input asp-for="Category.Id"  hidden />
+            <div class="my-2">
+                <label asp-for="Category.Name" class="mb-2"></label>
+                <input asp-for="Category.Name" disabled class="form-control" />
+            </div>
+            <div class="my-2">
+                <label asp-for="Category.DisplayOrder" class="mb-2"></label>
+                <input asp-for="Category.DisplayOrder" disabled class="form-control" />
+            </div>
+            <div class="row my-4">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-danger form-control" asp-page="/Category/Delete">Delete</button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a asp-page="/Category/Index" class="btn btn-secondary form-control">Back To List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div
+@* Client Side Validation by using jquery script*@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

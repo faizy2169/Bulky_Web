@@ -1,15 +1,12 @@
-﻿@model List<Category>
-
-@{
-    ViewData["Title"] = "Index";
-}
+﻿@page
+@model BulkeyWebRazor_Temp.Pages.Categories.IndexModel
 <div class="container">
     <div class="row my-4">
         <div class="col-md-6">
             <h3>Category List</h3>
         </div>
         <div class="col-md-6 text-end">
-            <a class="btn btn-primary" asp-controller="Category" asp-action="Create"> <i class="bi bi-plus-circle fw-bold"></i> Create New Category</a>
+            <a class="btn btn-primary" asp-page="/Categories/Create"> <i class="bi bi-plus-circle fw-bold"></i> Create New Category</a>
         </div>
     </div>
         <hr class="my-3" />
@@ -20,14 +17,14 @@
         </thead>
         <tbody>
             @{
-                foreach (var items in Model)
+                foreach (var items in Model.categoriesList.OrderBy(u=>u.DisplayOrder))
                 {
                     <tr class="align-middle">
                         <td>@items.Name</td>
                         <td>@items.DisplayOrder</td>
-                        <td class="d-flex column-gap-3">
-                            <a class="btn btn-primary form-control" asp-controller="Category" asp-action="Edit" asp-route-id="@items.Id"> <i class="bi bi-pencil-square"></i> Edit</a>
-                            <a class="btn btn-danger form-control" asp-asp-controller="Category" asp-action="Delete" asp-route-id="@items.Id"> <i class="bi bi-trash-fill"></i> Delete</a>
+                        <td class="d-flex" style="column-gap:.5rem;">
+                            <a class="btn btn-primary form-control" asp-page="/Categories/Edit" asp-route-id="@items.Id"> <i class="bi bi-pencil-square"></i> Edit</a>
+                            <a class="btn btn-danger form-control" asp-page="/Categories/Delete" asp-route-id="@items.Id"> <i class="bi bi-trash-fill"></i> Delete</a>
                         </td>
                     </tr>
                 }

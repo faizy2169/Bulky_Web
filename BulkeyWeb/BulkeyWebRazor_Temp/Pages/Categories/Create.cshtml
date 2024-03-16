@@ -1,0 +1,36 @@
+﻿@page
+@model BulkeyWebRazor_Temp.Pages.Categories.CreateModel
+<div class="container">
+    <div class="row my-3">
+        <h3>Create Category</h3>
+        <hr />
+    </div>
+    <div class="row">
+        @* <div asp-validation-summary="ModelOnly"></div> *@
+        <form method="post">
+            <div class="my-2">
+                <label asp-for="Category.Name" class="mb-2"></label>
+                <input asp-for="Category.Name" class="form-control" />
+                <span asp-validation-for="Category.Name" class="text-danger"></span>
+            </div>
+            <div class="my-2">
+                <label asp-for="Category.DisplayOrder" class="mb-2"></label>
+                <input asp-for="Category.DisplayOrder" class="form-control" />
+                <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+            </div>
+            <div class="row my-4">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control" asp-page="/Categories/Create">Create</button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a class="btn btn-secondary form-control" asp-page="/Categories/Index">Back To List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@* Client Side Validation by using jquery script*@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

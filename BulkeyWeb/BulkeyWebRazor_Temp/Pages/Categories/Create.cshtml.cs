@@ -21,7 +21,7 @@ namespace BulkeyWebRazor_Temp.Pages.Categories
         {
             if (ModelState.IsValid)
             {
-            _db.Categories.Add(Category);
+                _db.Categories.Add(Category);
             _db.SaveChanges();
              TempData["success"] = "Data created successfully";
              return RedirectToPage("Index");

@@ -1,6 +1,5 @@
 ﻿using BulkeyWeb.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BulkeyWeb.Data
 {

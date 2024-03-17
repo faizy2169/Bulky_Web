@@ -1,4 +1,6 @@
 using BulkeyWeb.Data;
+using BulkeyWeb.Repository;
+using BulkeyWeb.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,9 @@ builder.Services.AddControllersWithViews();
 // Service Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add Repository Services
+builder.Services.AddScoped<IGlobalRepository, GlobalRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
